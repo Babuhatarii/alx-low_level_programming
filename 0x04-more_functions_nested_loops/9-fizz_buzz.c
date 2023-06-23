@@ -1,4 +1,4 @@
-#include <stdio.h>
+#include "main.h"
 
 /**
  * main - Entry point of the program
@@ -12,17 +12,48 @@ int main(void)
 	for (i = 1; i <= 100; i++)
 	{
 		if (i % 3 == 0 && i % 5 == 0)
-			printf("FizzBuzz ");
+		{
+			_putchar('F');
+			_putchar('i');
+			_putchar('z');
+			_putchar('z');
+			_putchar('B');
+			_putchar('u');
+			_putchar('z');
+			_putchar('z');
+		}
 		else if (i % 3 == 0)
-			printf("Fizz ");
+		{
+			_putchar('F');
+			_putchar('i');
+			_putchar('z');
+			_putchar('z');
+		}
 		else if (i % 5 == 0)
-			printf("Buzz ");
+		{
+			_putchar('B');
+			_putchar('u');
+			_putchar('z');
+			_putchar('z');
+		}
 		else
-			printf("%d ", i);
+		{
+			int temp = i;
+
+			if (temp >= 10)
+			{
+				_putchar(temp / 10 + '0');
+				temp %= 10;
+			}
+			_putchar(temp + '0');
+		}
+
+		if (i != 100)
+			_putchar(' ');
 	}
 
-	printf("\n");
+	_putchar('\n');
 
-	return 0;
+	return (0);
 }
 
