@@ -8,18 +8,26 @@
  */
 int is_prime_number(int n)
 {
-	int i;
-
-	/* Handle special cases */
 	if (n <= 1)
 		return (0);
 
-	/* Check for divisibility by numbers up to the square root of n */
-	for (i = 2; i * i <= n; i++)
-	{
-		if (n % i == 0)
-			return (0);
-	}
+	return (check_prime(n, 2));
+}
 
-	return (1);
+/**
+ * check_prime - Helper function to check if a number is prime recursively.
+ * @n: The number to check.
+ * @divisor: The divisor to check divisibility with.
+ *
+ * Return: 1 if the number is prime, 0 otherwise.
+ */
+int check_prime(int n, int divisor)
+{
+	if (n == divisor)
+		return (1);
+
+	if (n % divisor == 0)
+		return (0);
+
+	return (check_prime(n, divisor + 1));
 }
