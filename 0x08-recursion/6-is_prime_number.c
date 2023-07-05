@@ -1,12 +1,13 @@
 #include "main.h"
 
 int is_prime_number(int n);
+int actual_prime(int n, int i);
 
 /**
- * is_prime_number - says if an integer is a prime number or not
+ * is_prime_number - checks if an integer is a prime number
  * @n: number to evaluate
  *
- * Return: 1 if n is a prime number, 0 if not
+ * Return: 1 if n is a prime number, 0 otherwise
  */
 int is_prime_number(int n)
 {
@@ -16,11 +17,11 @@ int is_prime_number(int n)
 }
 
 /**
- * actual_prime - calculate if a number is a prime recursively
+ * actual_prime - calculates if a number is prime recursively
  * @n: number to evaluate
- * @1: iterator
+ * @i: iterator
  *
- * Return: 1 if n is prime, 0 if not
+ * Return: 1 if n is prime, 0 otherwise
  */
 int actual_prime(int n, int i)
 {
