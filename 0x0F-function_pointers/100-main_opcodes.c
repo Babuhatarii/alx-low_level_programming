@@ -2,53 +2,42 @@
 #include <stdlib.h>
 
 /**
- * print_opcodes - Prints the opcodes of a given memory address.
- * @start_address: The starting memory address.
- * @num_bytes: The number of bytes to print.
+ * main - Prints its own opcodes.
+ * @argc: The number of arguments.
+ * @argv: An array of arguments.
  *
- * Description: This function prints the opcodes of a given memory address
- *              in hexadecimal format, separated by spaces.
- */
-void print_opcodes(char *start_address, int num_bytes)
-{
-	int i;
-
-	for (i = 0; i < num_bytes; i++)
-	{
-		printf("%02hhx ", start_address[i]);
-	}
-
-	printf("\n");
-}
-
-/**
- * main - Entry point of the program.
- * @argc: The number of command-line arguments.
- * @argv: An array of command-line argument strings.
- *
- * Return: 0 on success, 1 for incorrect number of arguments,
- *         2 for negative number of bytes.
+ * Return: Always 0 (Success).
  */
 int main(int argc, char *argv[])
 {
+	int bytes, i;
+	char *arr;
+
 	if (argc != 2)
 	{
 		printf("Error\n");
-		return (1);
+		exit(1);
 	}
 
-	int num_bytes = atoi(argv[1]);
+	bytes = atoi(argv[1]);
 
-	if (num_bytes < 0)
+	if (bytes < 0)
 	{
 		printf("Error\n");
-		return (2);
+		exit(2);
 	}
 
-	/* Calculate the start address of the main function */
-	char *main_start_address = (char *)main;
+	arr = (char *)main;
 
-	print_opcodes(main_start_address, num_bytes);
+	for (i = 0; i < bytes; i++)
+	{
+		if (i == bytes - 1)
+		{
+			printf("%02hhx\n", arr[i]);
+			break;
+		}
+		printf("%02hhx ", arr[i]);
+	}
 
 	return (0);
 }
