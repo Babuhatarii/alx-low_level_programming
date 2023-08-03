@@ -7,15 +7,9 @@
  */
 int get_endianness(void)
 {
-	union
-	{
-		unsigned int num;
-		unsigned char bytes[sizeof(unsigned int)];
-	} check;
+	unsigned int num = 1;
+	unsigned char *ptr = (unsigned char *)&num;
 
-	check.num = 1;
-
-	/* If the first byte is 1, it's little endian. Otherwise, it's big endian. */
-	return (check.bytes[0] == 1);
+	return (*ptr == 1);
 }
 
