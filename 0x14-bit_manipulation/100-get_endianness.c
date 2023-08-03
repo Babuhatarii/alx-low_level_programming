@@ -7,7 +7,8 @@
  */
 int get_endianness(void)
 {
-	union {
+	union
+	{
 		unsigned int num;
 		unsigned char bytes[sizeof(unsigned int)];
 	} check;
