@@ -3,4 +3,4 @@ CFLAGS = -Wall -Werror -Wextra -pedantic
 SRC = main.c school.c
 EXECUTABLE = school
 
-all: $(EXECUTABLE)
+all: $(SRC)
