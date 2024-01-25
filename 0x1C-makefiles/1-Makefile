@@ -4,6 +4,3 @@ SRC = main.c school.c
 EXECUTABLE = school
 
 all: $(EXECUTABLE)
-
-$(EXECUTABLE): $(SOURCE_FILES)
-	$(CC) $(CFLAGS) -o $@ $^
