@@ -1,8 +1,9 @@
 #!/usr/bin/python3
 
 """Calculate the perimeter of the island described in the given grid."""
-def island_perimeter(grid):
 
+
+def island_perimeter(grid):
     """Returns the perimiter of an island.
 The grid represents water by 0 and land by 1.
 
